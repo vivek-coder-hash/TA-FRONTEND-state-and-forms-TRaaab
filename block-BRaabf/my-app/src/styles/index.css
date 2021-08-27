@@ -1,0 +1,41 @@
+button {
+  display: block;
+  padding: 1rem 1rem;
+  outline: none;
+  border: none;
+  color: #fff;
+  background-color: green;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin: 2rem 0;
+}
+
+.counter-box {
+  border: 2px solid green;
+  padding: 2rem;
+}
+
+p {
+  font-size: 2rem;
+  color: darkslateblue;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  align-items: center;
+}
+
+.fas {
+  font-size: 2rem;
+}
+
+button:hover {
+  box-shadow: 0 5px 5px 5px rgb(0 0 0 / 20%);
+}
+
+.active-step {
+  background-color: cornflowerblue;
+  color: black;
+}
