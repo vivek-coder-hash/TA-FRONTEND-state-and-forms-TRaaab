@@ -1,22 +1,40 @@
-function App() {
-  return (
-    <div className="container">
-      <h1>My List</h1>
-      <input
-        type="text"
-        className="input width-100 form-control"
-        placeholder="Add AnyThing In List"
-      />
-      <ul className="root">
-        <ul>
-          <li class="flex justify-between align-center">
-            <p>text</p>
-            <button>To watch</button>
-          </li>
+import faqs from './data.json';
+import React from 'react';
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      activeIndex: null,
+    };
+  }
+  render() {
+    return (
+      <div className="container">
+        <h1>Altcampus FAQ</h1>
+
+        <ul className="root">
+          <ul>
+            {faqs.map((faq, index) => (
+              <li>
+                <h2
+                  onClick={() => {
+                    this.setState({
+                      activeIndex:
+                        this.state.activeIndex === index ? null : index,
+                    });
+                  }}
+                >
+                  {faq.Q} {this.state.activeIndex === index ? '👆' : '👇'}
+                </h2>
+                {index === this.state.activeIndex ? <p>{faq.A}</p> : ''}
+              </li>
+            ))}
+          </ul>
         </ul>
-      </ul>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
