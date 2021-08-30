@@ -9,6 +9,13 @@ class Tags extends React.Component {
     };
   }
 
+  handleClick = (menu) => {
+    //setState does not mutate the state
+    this.setState = {
+      activeHouse: menu,
+    };
+  };
+
   render() {
     let menuNames = data.map((menu) => menu.category);
     let everyMenu;
